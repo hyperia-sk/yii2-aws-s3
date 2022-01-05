@@ -1,11 +1,11 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\base\commands\traits;
+namespace hyperia\yii2\aws\s3\base\commands\traits;
 
 /**
  * Trait Options
  *
- * @package frostealth\yii2\aws\s3\base\commands\traits
+ * @package hyperia\yii2\aws\s3\base\commands\traits
  */
 trait Options
 {

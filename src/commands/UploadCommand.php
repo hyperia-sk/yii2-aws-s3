@@ -1,13 +1,13 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\commands;
+namespace hyperia\yii2\aws\s3\commands;
 
 use Aws\ResultInterface;
-use frostealth\yii2\aws\s3\base\commands\ExecutableCommand;
-use frostealth\yii2\aws\s3\base\commands\traits\Async;
-use frostealth\yii2\aws\s3\interfaces\commands\Asynchronous;
-use frostealth\yii2\aws\s3\interfaces\commands\HasAcl;
-use frostealth\yii2\aws\s3\interfaces\commands\HasBucket;
+use hyperia\yii2\aws\s3\base\commands\ExecutableCommand;
+use hyperia\yii2\aws\s3\base\commands\traits\Async;
+use hyperia\yii2\aws\s3\interfaces\commands\Asynchronous;
+use hyperia\yii2\aws\s3\interfaces\commands\HasAcl;
+use hyperia\yii2\aws\s3\interfaces\commands\HasBucket;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
@@ -15,7 +15,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method ResultInterface|PromiseInterface execute()
  *
- * @package frostealth\yii2\aws\s3\commands
+ * @package hyperia\yii2\aws\s3\commands
  */
 class UploadCommand extends ExecutableCommand implements HasBucket, HasAcl, Asynchronous
 {

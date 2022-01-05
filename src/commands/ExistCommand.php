@@ -1,17 +1,17 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\commands;
+namespace hyperia\yii2\aws\s3\commands;
 
-use frostealth\yii2\aws\s3\base\commands\ExecutableCommand;
-use frostealth\yii2\aws\s3\base\commands\traits\Options;
-use frostealth\yii2\aws\s3\interfaces\commands\HasBucket;
+use hyperia\yii2\aws\s3\base\commands\ExecutableCommand;
+use hyperia\yii2\aws\s3\base\commands\traits\Options;
+use hyperia\yii2\aws\s3\interfaces\commands\HasBucket;
 
 /**
  * Class ExistCommand
  *
  * @method bool execute()
  *
- * @package frostealth\yii2\aws\s3\commands
+ * @package hyperia\yii2\aws\s3\commands
  */
 class ExistCommand extends ExecutableCommand implements HasBucket
 {

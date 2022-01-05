@@ -1,9 +1,9 @@
 {
-    "name": "frostealth/yii2-aws-s3",
+    "name": "hyperia/yii2-aws-s3",
     "type": "yii2-extension",
     "description": "An Amazon S3 component for Yii2",
     "keywords": ["yii2", "aws", "s3", "aws-s3", "yii2-aws", "yii2-s3"],
-    "homepage": "https://github.com/frostealth/yii2-aws-s3",
+    "homepage": "https://github.com/hyperia-sk/yii2-aws-s3",
     "license": "MIT",
     "authors": [
         {
@@ -14,10 +14,15 @@
         {
             "name": "Constantine Chuprik",
             "email": "constantinchuprik@gmail.com"
+        },
+        {
+            "name": "Rudolf Krupa",
+            "email": "rudolfkrupa@hyperia.sk",
+            "homepage": "https://www.hyperia.sk"
         }
     ],
     "support": {
-        "issues": "https://github.com/frostealth/yii2-aws-s3/issues?state=open"
+        "issues": "https://github.com/hyperia-sk/yii2-aws-s3/issues?state=open"
     },
     "require": {
         "php": ">=7.0.0",
@@ -30,7 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "frostealth\\yii2\\aws\\s3\\": "src/"
+            "hyperia\\yii2\\aws\\s3\\": "src/"
         }
     }
 }

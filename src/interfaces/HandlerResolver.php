@@ -1,21 +1,21 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\interfaces;
+namespace hyperia\yii2\aws\s3\interfaces;
 
-use frostealth\yii2\aws\s3\interfaces\commands\Command;
-use frostealth\yii2\aws\s3\interfaces\handlers\Handler;
+use hyperia\yii2\aws\s3\interfaces\commands\Command;
+use hyperia\yii2\aws\s3\interfaces\handlers\Handler;
 
 /**
  * Interface HandlerResolver
  *
- * @package frostealth\yii2\aws\s3\interfaces
+ * @package hyperia\yii2\aws\s3\interfaces
  */
 interface HandlerResolver
 {
     /**
-     * @param \frostealth\yii2\aws\s3\interfaces\commands\Command $command
+     * @param \hyperia\yii2\aws\s3\interfaces\commands\Command $command
      *
-     * @return \frostealth\yii2\aws\s3\interfaces\handlers\Handler
+     * @return \hyperia\yii2\aws\s3\interfaces\handlers\Handler
      */
     public function resolve(Command $command): Handler;
 

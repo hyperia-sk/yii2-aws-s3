@@ -2,21 +2,14 @@
 
 An Amazon S3 component for Yii2.
 
-[![License](https://poser.pugx.org/frostealth/yii2-aws-s3/license)](https://github.com/frostealth/yii2-aws-s3/blob/2.x/LICENSE)
-[![Latest Stable Version](https://poser.pugx.org/frostealth/yii2-aws-s3/v/stable)](https://packagist.org/packages/frostealth/yii2-aws-s3)
-[![Total Downloads](https://poser.pugx.org/frostealth/yii2-aws-s3/downloads)](https://packagist.org/packages/frostealth/yii2-aws-s3)
-[![Latest Unstable Version](https://poser.pugx.org/frostealth/yii2-aws-s3/v/unstable)](https://packagist.org/packages/frostealth/yii2-aws-s3)
-
 > Yii2 AWS S3 uses [SemVer](http://semver.org/).
-
-> Version 2.x requires PHP 7. For PHP less 7.0 use [1.x](https://github.com/frostealth/yii2-aws-s3/tree/1.x).
 
 ## Installation
 
 1. Run the [Composer](http://getcomposer.org/download/) command to install the latest version:
 
     ```bash
-    composer require frostealth/yii2-aws-s3 ~2.0
+    composer require hyperia/yii2-aws-s3 ~2.0
     ```
 
 2. Add the component to `config/main.php`
@@ -25,7 +18,7 @@ An Amazon S3 component for Yii2.
     'components' => [
         // ...
         's3' => [
-            'class' => 'frostealth\yii2\aws\s3\Service',
+            'class' => 'hyperia\yii2\aws\s3\Service',
             'credentials' => [ // Aws\Credentials\CredentialsInterface|array|callable
                 'key' => 'my-key',
                 'secret' => 'my-secret',
@@ -43,7 +36,7 @@ An Amazon S3 component for Yii2.
 ### Usage of the command factory and additional params
 
 ```php
-/** @var \frostealth\yii2\aws\s3\Service $s3 */
+/** @var \hyperia\yii2\aws\s3\Service $s3 */
 $s3 = Yii::$app->get('s3');
 
 /** @var \Aws\ResultInterface $result */
@@ -72,7 +65,7 @@ $signedUrl = $s3->commands()->getPresignedUrl('filename.ext', '+2 days')->execut
 ### Short syntax
 
 ```php
-/** @var \frostealth\yii2\aws\s3\Service $s3 */
+/** @var \hyperia\yii2\aws\s3\Service $s3 */
 $s3 = Yii::$app->get('s3');
 
 /** @var \Aws\ResultInterface $result */
@@ -101,7 +94,7 @@ $signedUrl = $s3->getPresignedUrl('filename.ext', '+2 days');
 ### Asynchronous execution
 
 ```php
-/** @var \frostealth\yii2\aws\s3\Service $s3 */
+/** @var \hyperia\yii2\aws\s3\Service $s3 */
 $s3 = Yii::$app->get('s3');
 
 /** @var \GuzzleHttp\Promise\PromiseInterface $promise */
@@ -119,10 +112,10 @@ $promise = $s3->commands()->list('path/')->async()->execute();
 ## Advanced usage
 
 ```php
-/** @var \frostealth\yii2\aws\s3\interfaces\Service $s3 */
+/** @var \hyperia\yii2\aws\s3\interfaces\Service $s3 */
 $s3 = Yii::$app->get('s3');
 
-/** @var \frostealth\yii2\aws\s3\commands\GetCommand $command */
+/** @var \hyperia\yii2\aws\s3\commands\GetCommand $command */
 $command = $s3->create(GetCommand::class);
 $command->inBucket('my-another-bucket')->byFilename('filename.ext')->saveAs('/path/to/local/file.ext');
 
@@ -158,9 +151,9 @@ Consider the following command:
 
 namespace app\components\s3\commands;
 
-use frostealth\yii2\aws\s3\base\commands\traits\Options;
-use frostealth\yii2\aws\s3\interfaces\commands\Command;
-use frostealth\yii2\aws\s3\interfaces\commands\HasBucket;
+use hyperia\yii2\aws\s3\base\commands\traits\Options;
+use hyperia\yii2\aws\s3\interfaces\commands\Command;
+use hyperia\yii2\aws\s3\interfaces\commands\HasBucket;
 
 class MyCommand implements Command, HasBucket
 {
@@ -204,7 +197,7 @@ The handler for this command looks like this:
 namespace app\components\s3\handlers;
 
 use app\components\s3\commands\MyCommand;
-use frostealth\yii2\aws\s3\base\handlers\Handler;
+use hyperia\yii2\aws\s3\base\handlers\Handler;
 
 class MyCommandHandler extends Handler
 {
@@ -222,7 +215,7 @@ class MyCommandHandler extends Handler
 And usage this command:
 
 ```php
-/** @var \frostealth\yii2\aws\s3\interfaces\Service */
+/** @var \hyperia\yii2\aws\s3\interfaces\Service */
 $s3 = Yii::$app->get('s3');
 
 /** @var \app\components\s3\commands\MyCommand $command */
@@ -240,8 +233,8 @@ Custom plain command looks like this:
 
 namespace app\components\s3\commands;
 
-use frostealth\yii2\aws\s3\interfaces\commands\HasBucket;
-use frostealth\yii2\aws\s3\interfaces\commands\PlainCommand;
+use hyperia\yii2\aws\s3\interfaces\commands\HasBucket;
+use hyperia\yii2\aws\s3\interfaces\commands\PlainCommand;
 
 class MyPlainCommand implements PlainCommand, HasBucket
 {

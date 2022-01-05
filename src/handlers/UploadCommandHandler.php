@@ -1,21 +1,21 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\handlers;
+namespace hyperia\yii2\aws\s3\handlers;
 
-use frostealth\yii2\aws\s3\commands\UploadCommand;
-use frostealth\yii2\aws\s3\base\handlers\Handler;
+use hyperia\yii2\aws\s3\commands\UploadCommand;
+use hyperia\yii2\aws\s3\base\handlers\Handler;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\StreamInterface;
 
 /**
  * Class UploadCommandHandler
  *
- * @package frostealth\yii2\aws\s3\handlers
+ * @package hyperia\yii2\aws\s3\handlers
  */
 final class UploadCommandHandler extends Handler
 {
     /**
-     * @param \frostealth\yii2\aws\s3\commands\UploadCommand $command
+     * @param \hyperia\yii2\aws\s3\commands\UploadCommand $command
      *
      * @return \Aws\ResultInterface|\GuzzleHttp\Promise\PromiseInterface
      */
@@ -48,6 +48,6 @@ final class UploadCommandHandler extends Handler
             $source = Psr7\try_fopen($source, 'r+');
         }
 
-        return Psr7\stream_for($source);
+        return Psr7\Utils::streamFor($source);
     }
 }

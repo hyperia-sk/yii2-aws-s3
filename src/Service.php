@@ -1,11 +1,11 @@
 <?php
 
-namespace frostealth\yii2\aws\s3;
+namespace hyperia\yii2\aws\s3;
 
 use Aws\ResultInterface;
-use frostealth\yii2\aws\s3\interfaces\commands\Command;
-use frostealth\yii2\aws\s3\interfaces\HandlerResolver;
-use frostealth\yii2\aws\s3\interfaces\Service as ServiceInterface;
+use hyperia\yii2\aws\s3\interfaces\commands\Command;
+use hyperia\yii2\aws\s3\interfaces\HandlerResolver;
+use hyperia\yii2\aws\s3\interfaces\Service as ServiceInterface;
 use yii\base\Component;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
@@ -25,7 +25,7 @@ use yii\helpers\ArrayHelper;
  * @method string           getUrl(string $filename)
  * @method string           getPresignedUrl(string $filename, $expires)
  *
- * @package frostealth\yii2\aws\s3
+ * @package hyperia\yii2\aws\s3
  */
 class Service extends Component implements ServiceInterface
 {
@@ -70,7 +70,7 @@ class Service extends Component implements ServiceInterface
     /**
      * Executes a command.
      *
-     * @param \frostealth\yii2\aws\s3\interfaces\commands\Command $command
+     * @param \hyperia\yii2\aws\s3\interfaces\commands\Command $command
      *
      * @return mixed
      */
@@ -84,7 +84,7 @@ class Service extends Component implements ServiceInterface
      *
      * @param string $commandClass
      *
-     * @return \frostealth\yii2\aws\s3\interfaces\commands\Command
+     * @return \hyperia\yii2\aws\s3\interfaces\commands\Command
      */
     public function create(string $commandClass): Command
     {
@@ -94,7 +94,7 @@ class Service extends Component implements ServiceInterface
     /**
      * Returns command factory.
      *
-     * @return \frostealth\yii2\aws\s3\CommandFactory
+     * @return \hyperia\yii2\aws\s3\CommandFactory
      */
     public function commands(): CommandFactory
     {
@@ -104,7 +104,7 @@ class Service extends Component implements ServiceInterface
     /**
      * Returns handler resolver.
      *
-     * @return \frostealth\yii2\aws\s3\interfaces\HandlerResolver
+     * @return \hyperia\yii2\aws\s3\interfaces\HandlerResolver
      */
     public function getResolver(): HandlerResolver
     {
@@ -241,10 +241,10 @@ class Service extends Component implements ServiceInterface
     {
         return [
             'client' => ['class' => 'Aws\S3\S3Client'],
-            'resolver' => ['class' => 'frostealth\yii2\aws\s3\HandlerResolver'],
-            'bus' => ['class' => 'frostealth\yii2\aws\s3\Bus'],
-            'builder' => ['class' => 'frostealth\yii2\aws\s3\CommandBuilder'],
-            'factory' => ['class' => 'frostealth\yii2\aws\s3\CommandFactory'],
+            'resolver' => ['class' => 'hyperia\yii2\aws\s3\HandlerResolver'],
+            'bus' => ['class' => 'hyperia\yii2\aws\s3\Bus'],
+            'builder' => ['class' => 'hyperia\yii2\aws\s3\CommandBuilder'],
+            'factory' => ['class' => 'hyperia\yii2\aws\s3\CommandFactory'],
         ];
     }
 

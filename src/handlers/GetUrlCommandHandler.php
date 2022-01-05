@@ -1,19 +1,19 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\handlers;
+namespace hyperia\yii2\aws\s3\handlers;
 
-use frostealth\yii2\aws\s3\base\handlers\Handler;
-use frostealth\yii2\aws\s3\commands\GetUrlCommand;
+use hyperia\yii2\aws\s3\base\handlers\Handler;
+use hyperia\yii2\aws\s3\commands\GetUrlCommand;
 
 /**
  * Class GetUrlCommandHandler
  *
- * @package frostealth\yii2\aws\s3\handlers
+ * @package hyperia\yii2\aws\s3\handlers
  */
 final class GetUrlCommandHandler extends Handler
 {
     /**
-     * @param \frostealth\yii2\aws\s3\commands\GetUrlCommand $command
+     * @param \hyperia\yii2\aws\s3\commands\GetUrlCommand $command
      *
      * @return string
      */
