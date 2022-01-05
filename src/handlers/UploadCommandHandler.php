@@ -45,7 +45,7 @@ final class UploadCommandHandler extends Handler
     protected function sourceToStream($source): StreamInterface
     {
         if (is_string($source)) {
-            $source = Psr7\try_fopen($source, 'r+');
+            $source = Psr7\Utils::tryFopen($source, 'r+');
         }
 
         return Psr7\Utils::streamFor($source);
